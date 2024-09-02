@@ -1,9 +1,17 @@
+<p align="center">
+    <a href="https://github.com/BlackSheepTech/ui-avatars" target="_blank">
+        <img src="https://ui-avatars.com/api/?name=Black+Sheep+Tech&length=2&background=000&color=fff&rounded=true&bold=true" width="200" alt="BlackSheepTech UiAvatars">
+    </a>
+</p>
 
-# UiAvatars
+<p align="center">
+    <a href="https://packagist.org/packages/black-sheep-tech/ui-avatars"><img src="https://img.shields.io/packagist/v/black-sheep-tech/ui-avatars" alt="Latest Stable Version"></a>
+    <a href="https://packagist.org/packages/black-sheep-tech/ui-avatars"><img src="https://img.shields.io/packagist/dt/black-sheep-tech/ui-avatars" alt="Total Downloads"></a>
+    <a href="https://packagist.org/packages/black-sheep-tech/ui-avatars"><img src="https://img.shields.io/packagist/l/black-sheep-tech/ui-avatars" alt="License"></a>
+    <a href="https://packagist.org/packages/black-sheep-tech/ui-avatars"><img src="https://img.shields.io/github/stars/BlackSheepTech/ui-avatars" alt="Stars"></a>
+</p>
 
-
-
-UiAvatars is a PHP library for generating avatar using the UI Avatars API (https://ui-avatars.com).
+UiAvatars is a PHP library for Laravel used to generate avatar using the UI Avatars API (https://ui-avatars.com).
 This package provides a simple, fluent interface for customizing avatar parameters and generating the corresponding URL. It also allows downloading and saving the avatars locally.
 
 ## Installation
