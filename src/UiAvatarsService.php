@@ -160,10 +160,10 @@ class UiAvatarsService
         ];
     }
 
-    private function sanitizeColorInput(string $color, string $parameter, bool $canBeRandom = false): string
+    private function sanitizeColorInput(string $color, string $parameter, bool $canBeRandom = false, bool $canBeTransparent = false): string
     {
         $color = Str::of($color)->remove('#');
-        $this->validateHexColor($color, $parameter, $canBeRandom);
+        $this->validateHexColor($color, $parameter, $canBeRandom, $canBeTransparent);
 
         return $color;
     }
