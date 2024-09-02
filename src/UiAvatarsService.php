@@ -65,18 +65,14 @@ class UiAvatarsService
 
     public function size(int $size = 64): self
     {
-        $this->validateRange($size, 16, 512, 'size');
-
-        $this->size = $size;
+        $this->size = $this->validateRange($size, 16, 512, 'size');
 
         return $this;
     }
 
     public function fontSize(float $fontSize = 0.5): self
     {
-        $this->validateRange($fontSize, 0.1, 1.0, 'font size');
-
-        $this->fontSize = $fontSize;
+        $this->fontSize = $this->validateRange($fontSize, 0.1, 1.0, 'font size');
 
         return $this;
     }
@@ -175,7 +171,7 @@ class UiAvatarsService
         throw_unless(Str::of($color)->test($pattern), new \InvalidArgumentException("Invalid $parameter provided. Only hex colors".($canBeRandom ? ', " or random"' : '').($canBeTransparent ? ', and "transparent"' : '').' are allowed.'));
     }
 
-    private function validateRange(int|float $value, int|float|null $min, int|float|null $max, string $type): void
+    private function validateRange(int|float $value, int|float|null $min, int|float|null $max, string $type): int|float
     {
         throw_if(is_null($min) && is_null($max), new \InvalidArgumentException('Invalid range provided. Minimum and maximum values cannot both be null.'));
 
@@ -188,5 +184,7 @@ class UiAvatarsService
         throw_if($min > $max, new \InvalidArgumentException('Invalid range provided. Minimum value must be less than maximum value.'));
 
         throw_unless($value >= $min && $value <= $max, new \InvalidArgumentException("Invalid {$type} provided. Must be between {$min} and {$max}."));
+
+        return $value;
     }
 }
