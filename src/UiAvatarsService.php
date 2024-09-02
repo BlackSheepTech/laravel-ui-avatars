@@ -175,8 +175,18 @@ class UiAvatarsService
         throw_unless(Str::of($color)->test($pattern), new \InvalidArgumentException("Invalid $parameter provided. Only hex colors".($canBeRandom ? ' or "random"' : null).' are allowed.'));
     }
 
-    private function validateRange($value, $min, $max, string $type): void
+    private function validateRange(int|float $value, int|float|null $min, int|float|null $max, string $type): void
     {
+        throw_if(is_null($min) && is_null($max), new \InvalidArgumentException('Invalid range provided. Minimum and maximum values cannot both be null.'));
+
+        if (is_null($min)) {
+            throw_unless($value <= $max, new \InvalidArgumentException("Invalid {$type} provided. Must be less than or equal {$max}."));
+        } elseif (is_null($max)) {
+            throw_unless($value >= $min, new \InvalidArgumentException("Invalid {$type} provided. Must be greater than or equal {$min}."));
+        }
+
+        throw_if($min > $max, new \InvalidArgumentException('Invalid range provided. Minimum value must be less than maximum value.'));
+
         throw_unless($value >= $min && $value <= $max, new \InvalidArgumentException("Invalid {$type} provided. Must be between {$min} and {$max}."));
     }
 }
