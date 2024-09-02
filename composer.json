@@ -12,6 +12,14 @@
             "BlackSheepTech\\UiAvatars\\": "src/"
         }
     },
+    "scripts": {
+        "fix":[
+            "./vendor/bin/pint"
+        ],
+        "lint": [
+            "./vendor/bin/pint --test"
+        ]
+    },
     "authors": [
       {
         "name": "Israel Pinheiro",
@@ -19,5 +27,8 @@
       }
     ],
     "minimum-stability": "stable",
-    "prefer-stable": true
-  }
+    "prefer-stable": true,
+    "require-dev": {
+        "laravel/pint": "^1.17"
+    }
+}
