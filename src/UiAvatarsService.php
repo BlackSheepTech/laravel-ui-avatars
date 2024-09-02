@@ -170,9 +170,9 @@ class UiAvatarsService
 
     private function validateHexColor(string $color, string $parameter = 'color', bool $canBeRandom = false, bool $canBeTransparent = false): void
     {
-        $pattern = '/^([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3}'. ($canBeRandom ? "|random" : null) .($canBeTransparent ? "|transparent" : null).')$/i';
+        $pattern = '/^([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3}'.($canBeRandom ? '|random' : null).($canBeTransparent ? '|transparent' : null).')$/i';
 
-        throw_unless(Str::of($color)->test($pattern), new \InvalidArgumentException("Invalid $parameter provided. Only hex colors" . ($canBeRandom ? ', " or random"' : '') . ($canBeTransparent ? ', and "transparent"' : '') . ' are allowed.'));
+        throw_unless(Str::of($color)->test($pattern), new \InvalidArgumentException("Invalid $parameter provided. Only hex colors".($canBeRandom ? ', " or random"' : '').($canBeTransparent ? ', and "transparent"' : '').' are allowed.'));
     }
 
     private function validateRange(int|float $value, int|float|null $min, int|float|null $max, string $type): void
