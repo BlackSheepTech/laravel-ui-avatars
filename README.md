@@ -1,6 +1,6 @@
 <p align="center">
     <a href="https://github.com/BlackSheepTech/ui-avatars" target="_blank">
-        <img src="https://ui-avatars.com/api/?name=Black+Sheep+Tech&length=2&background=000&color=fff&rounded=true&bold=true" width="200" alt="BlackSheepTech UiAvatars">
+        <img src="https://avatars.githubusercontent.com/u/85756821?s=400&u=14843f72938dc40cbd14400f5b3daad45f054f43&v=4" width="200" alt="BlackSheepTech UiAvatars">
     </a>
 </p>
 
