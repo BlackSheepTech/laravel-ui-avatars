@@ -10,31 +10,49 @@ class UiAvatarsService
 {
     private string $baseUrl;
 
-    private string $name;
+    private ?string $name;
 
-    private string $background = 'random';
+    private string $background;
 
-    private string $color = '8b5d5d';
+    private string $color;
 
-    private int $size = 64;
+    private int $size;
 
-    private float $fontSize = 0.5;
+    private float $fontSize;
 
-    private int $length = 2;
+    private int $length;
 
-    private bool $rounded = false;
+    private bool $rounded;
 
-    private bool $bold = false;
+    private bool $bold;
 
-    private bool $uppercase = true;
+    private bool $uppercase;
 
-    private string $format = 'png';
+    private string $format;
 
     public function __construct()
     {
-        $this->baseUrl = config('services.ui-avatars.base_url', 'https://ui-avatars.com/api/');
+        $this->baseUrl = config('ui-avatars.base_url', 'https://ui-avatars.com/api/');
+
+        $this->loadDefaults();
 
         throw_unless(filter_var($this->baseUrl, FILTER_VALIDATE_URL), new \InvalidArgumentException('Invalid base URL provided.'));
+    }
+
+    private function loadDefaults(): void
+    {
+        $defaults = config('ui-avatars.defaults');
+
+        $this->name = $defaults['name'];
+        $this->background = $defaults['background'];
+        $this->color = $defaults['color'];
+        $this->size = $defaults['size'];
+        $this->fontSize = $defaults['font-size'];
+        $this->length = $defaults['length'];
+        $this->rounded = $defaults['rounded'];
+        $this->bold = $defaults['bold'];
+        $this->uppercase = $defaults['uppercase'];
+        $this->format = $defaults['format'];
     }
 
     public static function make(): self
@@ -142,18 +160,24 @@ class UiAvatarsService
 
     private function buildQueryParams(): array
     {
-        return [
-            'name' => $this->name,
-            'background' => $this->background,
-            'color' => $this->color,
-            'size' => $this->size,
-            'font-size' => $this->fontSize,
-            'length' => $this->length,
-            'rounded' => $this->rounded ? 'true' : 'false',
-            'bold' => $this->bold ? 'true' : 'false',
-            'uppercase' => $this->uppercase ? 'true' : 'false',
-            'format' => $this->format,
-        ];
+        if (is_null($this->name)) {
+            throw new \InvalidArgumentException('Name must be provided.');
+        }
+
+        $apiDefaults = config('ui-avatars.api-defaults');
+
+        return array_merge(
+            ['name' => $this->name],
+            $this->background !== $apiDefaults['background'] ? ['background' => $this->background] : [],
+            $this->color !== $apiDefaults['color'] ? ['color' => $this->color] : [],
+            $this->size !== $apiDefaults['size'] ? ['size' => $this->size] : [],
+            $this->fontSize !== $apiDefaults['font-size'] ? ['font-size' => $this->fontSize] : [],
+            $this->length !== $apiDefaults['length'] ? ['length' => $this->length] : [],
+            $this->rounded !== $apiDefaults['rounded'] ? ['rounded' => $this->rounded ? 'true' : 'false'] : [],
+            $this->bold !== $apiDefaults['bold'] ? ['bold' => $this->bold ? 'true' : 'false'] : [],
+            $this->uppercase !== $apiDefaults['uppercase'] ? ['uppercase' => $this->uppercase ? 'true' : 'false'] : [],
+            $this->format !== $apiDefaults['format'] ? ['format' => $this->format] : []
+        );
     }
 
     private function sanitizeColorInput(string $color, string $parameter, bool $canBeRandom = false, bool $canBeTransparent = false): string
