@@ -24,19 +24,33 @@ composer require your-vendor-name/ui-avatars-service
 
 ## Usage
 
-### Basic Usage
+### Basic Usage / Url Generation
 
 ```php
 use BlackSheepTech\UiAvatars\UiAvatarsService as UiAvatars;
 
-$avatarService = UiAvatars::make()
+$avatarUrl = UiAvatars::make()
     ->name('John Doe')
     ->size(128)
     ->background('#ffffff')
-    ->color('#000000');
+    ->color('#000000')->getUrl();
+```
 
-$url = $avatarService->getUrl();
-echo $url;  // Outputs the URL of the generated avatar
+### With all customizations
+
+```php
+
+$avatarUrl = UiAvatars::make()
+    ->name('John Doe')
+    ->size(128)
+    ->background('#ffffff')
+    ->color('#000000')
+    ->length(2)
+    ->rounded(true)
+    ->bold(true)
+    ->uppercase(true)
+    ->format('png')
+    ->getUrl();
 ```
 
 ### Download Avatar
@@ -44,8 +58,8 @@ echo $url;  // Outputs the URL of the generated avatar
 To download the avatar directly:
 
 ```php
-// Prompt a download of the avatar to a file named 'john_doe_avatar.png', by default, if a file name is not provided, a random name will be generated.
-$response = $avatarService->download('john_doe_avatar');
+// Prompts a download of the avatar to a file named 'john_doe_avatar.png', by default, if a file name is not provided, a random name will be generated.
+$avatarService->download('john_doe_avatar');
 ```
 
 ### Save Avatar Directly to Disk
@@ -54,10 +68,10 @@ To save the avatar to a specific location:
 
 ```php
 // Saves the avatar to 'avatars/john_doe_avatar.png' by default.
-$path = $avatarService->saveTo('avatars', 'john_doe_avatar');
+$avatarPath = $avatarService->saveTo('avatars', 'john_doe_avatar');
 
 // You can provided the disk to be used as the third parameter, by default, the application's default disk will be used.
-$path = $avatarService->saveTo('avatars', 'john_doe_avatar', 'public');
+$avatarPath = $avatarService->saveTo('avatars', 'john_doe_avatar', 'public');
 ```
 
 ## Customization
