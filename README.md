@@ -5,9 +5,9 @@
 </p>
 
 <p align="center">
-    <a href="https://packagist.org/packages/black-sheep-tech/ui-avatars"><img src="https://img.shields.io/packagist/v/black-sheep-tech/ui-avatars" alt="Latest Stable Version"></a>
+    <a href="https://packagist.org/packages/black-sheep-tech/ui-avatars"><img src="https://img.shields.io/packagist/v/black-sheep-tech/ui-avatars" alt="Current Version"></a>
     <a href="https://packagist.org/packages/black-sheep-tech/ui-avatars"><img src="https://img.shields.io/packagist/dt/black-sheep-tech/ui-avatars" alt="Total Downloads"></a>
-    <a href="https://packagist.org/packages/black-sheep-tech/ui-avatars"><img src="https://img.shields.io/packagist/l/black-sheep-tech/ui-avatars" alt="License"></a>
+    <a href="https://packagist.org/packages/black-sheep-tech/ui-avatars"><img src="https://img.shields.io/github/license/BlackSheepTech/ui-avatars" alt="License"></a>
     <a href="https://packagist.org/packages/black-sheep-tech/ui-avatars"><img src="https://img.shields.io/github/stars/BlackSheepTech/ui-avatars" alt="Stars"></a>
 </p>
 
