@@ -27,7 +27,7 @@ composer require black-sheep-tech/ui-avatars
 ### Basic Usage / Url Generation
 
 ```php
-use BlackSheepTech\UiAvatars\UiAvatarsService as UiAvatars;
+use BlackSheepTech\UiAvatars\UiAvatars;
 
 $avatarUrl = UiAvatars::make()
     ->name('John Doe')
@@ -58,7 +58,7 @@ $avatarUrl = UiAvatars::make()
 To download the avatar directly:
 
 ```php
-use BlackSheepTech\UiAvatars\UiAvatarsService as UiAvatars;
+use BlackSheepTech\UiAvatars\UiAvatars;
 
 // Prompts a download of the avatar to a file named 'john_doe_avatar.png', by default, if a file name is not provided, a random name will be generated.
 
@@ -70,7 +70,7 @@ UiAvatars::make()->name('John Doe')->download('john_doe_avatar');
 To save the avatar to a specific location:
 
 ```php
-use BlackSheepTech\UiAvatars\UiAvatarsService as UiAvatars;
+use BlackSheepTech\UiAvatars\UiAvatars;
 
 // Saves the avatar to 'avatars/john_doe_avatar.png' by default.
 $avatarPath = UiAvatars::make()->name('John Doe')->saveTo('avatars', 'john_doe_avatar');
