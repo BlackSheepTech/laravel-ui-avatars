@@ -1,0 +1,9 @@
+/.phpunit.cache
+/vendor
+/.fleet
+/.idea
+/.vscode
+*.key
+.env
+.env.backup
+.env.production
