@@ -7,6 +7,11 @@
       "laravel/framework": ">=9.0 <12.0"
     },
     "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "BlackSheepTech\\UiAvatars\\": "src/"
+        }
+    },
     "authors": [
       {
         "name": "Israel Pinheiro",
