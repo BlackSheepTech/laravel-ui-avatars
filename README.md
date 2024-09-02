@@ -19,7 +19,7 @@ This package provides a simple, fluent interface for customizing avatar paramete
 You can install the package via Composer:
 
 ```bash
-composer require your-vendor-name/ui-avatars-service
+composer require black-sheep-tech/ui-avatars
 ```
 
 ## Usage
