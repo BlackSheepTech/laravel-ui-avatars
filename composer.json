@@ -1,34 +1,91 @@
 {
     "name": "black-sheep-tech/ui-avatars",
     "description": "A simple service provider/wrapper for the UI Avatars API (https://ui-avatars.com).",
-    "type": "library",
-    "require": {
-      "php": "^8.0",
-      "laravel/framework": ">=9.0 <12.0"
-    },
+    "keywords": ["laravel", "ui-avatars"],
+    "homepage": "https://github.com/BlackSheepTech/ui-avatars",
     "license": "MIT",
+    "support": {
+        "issues": "https://github.com/BlackSheepTech/ui-avatars/issues",
+        "source": "https://github.com/BlackSheepTech/ui-avatars"
+    },
+    "authors": [
+        {
+            "name": "Israel Pinheiro",
+            "email": "israel.pinheiro@live.com"
+        }
+    ],
+    "require": {
+        "php": "^8.1",
+        "illuminate/config": "^10.48.4|^11.0.8",
+        "illuminate/console": "^10.48.4|^11.0.8",
+        "illuminate/contracts": "^10.48.4|^11.0.8",
+        "illuminate/http": "^10.48.4|^11.0.8",
+        "illuminate/support": "^10.48.4|^11.0.8",
+        "symfony/console": "^6.0|^7.0"
+    },
+    "require-dev": {
+        "laravel/pint": "^1.17",
+        "larastan/larastan": "^2.9",
+        "pestphp/pest": "^2.35",
+        "pestphp/pest-plugin-laravel": "^2.4",
+        "nunomaduro/phpinsights": "^2.11",
+        "pestphp/pest-plugin-type-coverage": "^2.8",
+        "pestphp/pest-plugin-stressless": "^2.2"
+    },
     "autoload": {
         "psr-4": {
             "BlackSheepTech\\UiAvatars\\": "src/"
         }
     },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "BlackSheepTech\\UiAvatars\\UiAvatarsServiceProvider"
+            ]
+        }
+    },
     "scripts": {
+        "insights":[
+            "./vendor/bin/phpinsights -v"
+        ],
+        "insights-fix":[
+            "./vendor/bin/phpinsights -v --fix"
+        ],
+        "analyse":[
+            "./vendor/bin/phpstan analyse --memory-limit=2G"
+        ],
+        "analyse-strict":[
+            "./vendor/bin/phpstan analyse --memory-limit=2G --level=9"
+        ],
         "fix":[
             "./vendor/bin/pint"
         ],
         "lint": [
             "./vendor/bin/pint --test"
+        ],
+        "test": [
+            "./vendor/bin/pest --parallel --stop-on-failure"
+        ],
+        "test-coverage": [
+            "./vendor/bin/pest --coverage --min=80"
+        ],
+        "type-coverage": [
+            "./vendor/bin/pest --type-coverage --min=80"
+        ],
+        "ci": [
+            "./vendor/bin/pest --coverage --min=80",
+            "./vendor/bin/pest --coverage --min=80",
+            "./vendor/bin/pint --test",
+            "./vendor/bin/phpstan analyse --memory-limit=2G",
+            "./vendor/bin/pest --parallel --stop-on-failure"
         ]
     },
-    "authors": [
-      {
-        "name": "Israel Pinheiro",
-        "email": "israel.pinheiro@live.com"
-      }
-    ],
     "minimum-stability": "stable",
     "prefer-stable": true,
-    "require-dev": {
-        "laravel/pint": "^1.17"
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true,
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
     }
 }
