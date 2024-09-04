@@ -1,17 +1,17 @@
 <p align="center">
-    <a href="https://github.com/BlackSheepTech/ui-avatars" target="_blank">
+    <a href="https://github.com/BlackSheepTech/laravel-ui-avatars" target="_blank">
         <img src="https://avatars.githubusercontent.com/u/85756821?s=400&u=14843f72938dc40cbd14400f5b3daad45f054f43&v=4" width="200" alt="BlackSheepTech UiAvatars">
     </a>
 </p>
 
 <p align="center">
-    <a href="https://packagist.org/packages/black-sheep-tech/ui-avatars"><img src="https://img.shields.io/packagist/v/black-sheep-tech/ui-avatars" alt="Current Version"></a>
-    <a href="https://packagist.org/packages/black-sheep-tech/ui-avatars"><img src="https://img.shields.io/packagist/dt/black-sheep-tech/ui-avatars" alt="Total Downloads"></a>
-    <a href="https://packagist.org/packages/black-sheep-tech/ui-avatars"><img src="https://img.shields.io/github/license/BlackSheepTech/ui-avatars" alt="License"></a>
-    <a href="https://packagist.org/packages/black-sheep-tech/ui-avatars"><img src="https://img.shields.io/github/stars/BlackSheepTech/ui-avatars" alt="Stars"></a>
+    <a href="https://packagist.org/packages/black-sheep-tech/laravel-ui-avatars"><img src="https://img.shields.io/packagist/v/black-sheep-tech/laravel-ui-avatars" alt="Current Version"></a>
+    <a href="https://packagist.org/packages/black-sheep-tech/laravel-ui-avatars"><img src="https://img.shields.io/packagist/dt/black-sheep-tech/laravel-ui-avatars" alt="Total Downloads"></a>
+    <a href="https://packagist.org/packages/black-sheep-tech/laravel-ui-avatars"><img src="https://img.shields.io/github/license/BlackSheepTech/laravel-ui-avatars" alt="License"></a>
+    <a href="https://packagist.org/packages/black-sheep-tech/laravel-ui-avatars"><img src="https://img.shields.io/github/stars/BlackSheepTech/laravel-ui-avatars" alt="Stars"></a>
 </p>
 
-Laravel UiAvatars is a PHP library for Laravel used to generate avatar using the UI Avatars API (https://ui-avatars.com).
+Laravel UiAvatars is a PHP library for Laravel used to generate avatar using the UI Avatars API (https://laravel-ui-avatars.com).
 This package provides a simple, fluent interface for customizing avatar parameters and generating the corresponding URL. It also allows downloading and saving the avatars locally.
 
 ## Installation
@@ -19,7 +19,7 @@ This package provides a simple, fluent interface for customizing avatar paramete
 You can install the package via Composer:
 
 ```bash
-composer require black-sheep-tech/ui-avatars
+composer require black-sheep-tech/laravel-ui-avatars
 ```
 
 ## Usage
@@ -110,4 +110,4 @@ Contributions are welcome! Please feel free to submit a Pull Request on GitHub.
 ## Credits
 
 - [Israel Pinheiro](https://github.com/IsraelPinheiro)
-- [All Contributors](https://github.com/BlackSheepTech/ui-avatars/graphs/contributors)
+- [All Contributors](https://github.com/BlackSheepTech/laravel-ui-avatars/graphs/contributors)
