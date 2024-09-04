@@ -15,7 +15,7 @@ class UiAvatarsServiceProvider extends ServiceProvider
     public function register(): void
     {
         $this->mergeConfigFrom(
-            __DIR__.'/../config/pulse.php', 'pulse'
+            __DIR__.'/../config/ui-avatars.php', 'ui-avatars'
         );
     }
 
