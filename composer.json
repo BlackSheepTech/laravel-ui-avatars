@@ -1,5 +1,5 @@
 {
-    "name": "black-sheep-tech/ui-avatars",
+    "name": "black-sheep-tech/laravel-ui-avatars",
     "description": "A simple service provider/wrapper for the UI Avatars API (https://ui-avatars.com).",
     "keywords": ["laravel", "ui-avatars"],
     "homepage": "https://github.com/BlackSheepTech/ui-avatars",
